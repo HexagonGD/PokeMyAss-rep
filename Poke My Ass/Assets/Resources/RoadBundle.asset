@@ -13,8 +13,4 @@ MonoBehaviour:
   m_Name: RoadBundle
   m_EditorClassIdentifier: 
   _prefabs:
-  - {fileID: 8653442275591283793, guid: 7746aa68e5829d949a5d563c9b2eb8d7, type: 3}
-  - {fileID: 8653442275591283793, guid: 036df5d900aab6c4a8b324e0bb1682f4, type: 3}
-  - {fileID: 8653442275591283793, guid: 3c054313e3a719945b39d4dc3984ec52, type: 3}
-  - {fileID: 8653442275591283793, guid: 3c054313e3a719945b39d4dc3984ec52, type: 3}
-  - {fileID: 8653442275591283793, guid: 036df5d900aab6c4a8b324e0bb1682f4, type: 3}
+  - {fileID: 5611101417236932631, guid: 1f084886a6302b248a891d27b9899526, type: 3}

@@ -4,9 +4,11 @@ public class Player : MonoBehaviour
 {
     private IInput _input;
     private RoadBuilder _roadBuilder;
+    private TowerBuilder _towerBuilder;
     private Transform _transform;
 
     [SerializeField] private Vector3 _offsetSpawnRoad;
+    [SerializeField] private bool _noDead;
 
     [Header("Speed")]
     [Min(0)][SerializeField] private float _forwardSpeed;
@@ -20,7 +22,8 @@ public class Player : MonoBehaviour
     {
         _transform = transform;
         _input = new KeyboardInput();
-        _roadBuilder = new RoadBuilder(_transform.position + _offsetSpawnRoad, 20f, 6);
+        _roadBuilder = new RoadBuilder(_transform.position + _offsetSpawnRoad, 100f, 15);
+        _towerBuilder = new TowerBuilder();
     }
 
     private void Update()
@@ -31,11 +34,13 @@ public class Player : MonoBehaviour
         position.z += _forwardSpeed * Time.deltaTime;
         _transform.position = position;
         _roadBuilder.HandlePosition(_transform.position.z);
+        _towerBuilder.HandlePosition(_transform.position.z);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Collision");
-        Destroy(gameObject);
+        if(!_noDead)
+            Destroy(gameObject);
     }
 }
